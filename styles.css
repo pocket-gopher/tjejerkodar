@@ -1,3 +1,179 @@
 body {
+	font-family: "Lato", sans-serif;
 	background-color: hotpink;
+	font-size: 16px;
+	line-height: 1.7em;
+	padding: 0;
+	margin: 0;
+}
+
+.heading {
+	font-weight: 700;
+	font-size: 2.1rem;
+	line-height: 1.2em;
+	margin: 0;
+}
+
+.sub-heading {
+	font-weight: 300;
+	font-style: italic;
+	font-size: 1.6rem;
+	line-height: 1.4em;
+	margin: 10px 0;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 30px;
+	background-color: #5EFCDB;
+	font-size: 0.71429rem;
+	letter-spacing: 0.2em;
+	color: #23173B;
+	text-transform: uppercase;
+	padding: 15px 23px;
+	text-decoration: none;
+	margin: 2em auto;
+}
+
+.open-menu {
+	position: absolute;
+	right: 5px;
+	top: 20px;
+	height: 44px;
+	width: 44px;
+}
+.open-menu span {
+	position: relative;
+	display: block;
+	font-size: 0;
+	height: 15px;
+	width: 18px;
+	background:  linear-gradient(to bottom, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 6px, rgba(255,255,255,1) 6px, rgba(255,255,255,1) 9px, rgba(255,255,255,0) 9px, rgba(255,255,255,0) 100%);
+
+}
+.open-menu span:before,
+.open-menu span:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	display: block;
+	height: 3px;
+	width: 100%;
+	background-color: #fff;
+	transition: transform .3s;
+}
+.open-menu span:after {
+	top: auto;
+	bottom: 0;
+}
+
+.js-isOpen span {
+	background: none;
+
+
+}
+.js-isOpen span:before {
+	transform: rotate(45deg) translate(3px, 5px);
+}
+.js-isOpen span:after {
+	transform: rotate(-45deg) translate(3px, -6px);
+}
+
+.menu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	text-transform: uppercase;
+}
+
+.menu li a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+.main-title {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	display: inline-block;
+	width: 55px;
+	height: 40px;
+	overflow: hidden;
+	text-indent: -9000px;
+	background: url('./images/tk_logo.png') no-repeat transparent;
+	background-size: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.hero {
+	padding: 40px;
+	background-image: url('./images/lila_pattern.png');
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	color: #fff;
+}
+
+@media all and (min-width: 770px) {
+	.navigation {
+		text-align: center;
+	}
+
+	.open-menu {
+		display: none;
+	}
+
+	.menu {
+		display: block;
+		margin: 28px auto 0;
+		padding: 0 0 0 27px;
+		letter-spacing: -4px;
+	}
+
+	.menu li {
+		display: inline-block;
+		letter-spacing: normal;
+		line-height: 1.7em;
+	}
+
+	.menu li a {
+		padding: 10px;
+		opacity: 0.75;
+		cursor: pointer;
+	}
+
+	.menu li a:hover {
+		opacity: 1;
+	}
+
+	.menu li .replace-logo {
+		width: 130px;
+		padding: 27px 15px 10px;
+		color: transparent;
+	}
+
+	.main-title {
+		top: 20px;
+		left: -14px;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80px;
+		height: 57px;
+		z-index: 0;
+		pointer-events: none;
+	}
+
+    .hero {
+	    background-size: contain;
+	    margin-top: -92px;
+	    padding-top: 132px;
+    }
 }
