@@ -26,8 +26,8 @@ a {
 }
 .sub-sub-heading {
 	color: #32037A;
-	margin: 40px auto;
-	font-size: 1.8rem;
+	margin: 30px auto;
+	font-size: 1.5rem;
 	max-width: 700px;
 	text-align: center;
 	font-weight: 700;
@@ -140,6 +140,11 @@ a {
 	flex-flow: row wrap;
 	margin: 0 5%;
 }
+
+.container .sub-sub-heading {
+	flex: 0 0 100%;
+}
+
 .container > div {
 	position: relative;
 	width: 100%;
@@ -162,6 +167,9 @@ a {
 	background-size: cover;
 	background-position: center;
 	text-decoration: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -191,6 +199,11 @@ a {
 	.sub-heading {
 		font-size: 1.9rem;
 	}
+	.sub-sub-heading {
+		margin: 40px auto;
+		font-size: 1.8rem;
+	}
+
 	.navigation {
 		text-align: center;
 	}
