@@ -11,12 +11,6 @@ a {
 }
 
 .heading {
-	font-weight: 700;
-	font-size: 2.1rem;
-	line-height: 1.2em;
-	margin: 0;
-}
-.sub-heading {
 	margin: 10px auto;
 	font-weight: 300;
 	font-style: italic;
@@ -24,11 +18,16 @@ a {
 	line-height: 1.4em;
 	color: #fff;
 }
+.sub-heading {
+	font-weight: 700;
+	font-size: 2.1rem;
+	line-height: 1.2em;
+	margin: 0;
+}
 .sub-sub-heading {
 	color: #32037A;
 	margin: 30px auto;
 	font-size: 1.5rem;
-	max-width: 700px;
 	text-align: center;
 	font-weight: 700;
 }
@@ -145,10 +144,10 @@ a {
 	flex: 0 0 100%;
 }
 
-.container > div {
+.container > div,
+.promotion-item {
 	position: relative;
 	width: 100%;
-	box-sizing: border-box;
 }
 .container > div:before {
 	content: '';
@@ -156,7 +155,12 @@ a {
 	padding-top: 64.15%; /* 340/530 */
 }
 
-.puff {
+.grid {
+	justify-content: space-between;
+}
+
+.puff,
+.promotion-item > a {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -177,27 +181,87 @@ a {
 	font-weight: 700;
 	line-height: 2.2rem;
 }
+.puff:hover,
+.promotion-item > a:hover {
+	background-size: 110%;
+}
 .puff.barcelona {
 	background-image: url('./images/aktuell-barcelona2.png');
 }
 .puff.berlin {
 	background-image: url('./images/aktuell-berlin.png');
 }
-
 .puff span {
 	padding: 12px 10px;
 	background-color: #fff;
 }
-@media all and (min-width: 550px) {
 
+.promotion-item {
+	margin-bottom: 5%;
+}
+.promotion-item:before {
+	content: '';
+	display: block;
+	padding-top: 100%; /* 340/340 */
+}
+.promotion-item > a {
+	padding: 5%;
+	box-sizing: border-box;
+	background-image: url('./images/ljuslila_pattern.png');
+}
+.promotion-item.alt-one > a {
+	background-image: url('./images/bla_pattern.png');
+}
+.promotion-item.alt-two > a {
+	background-image: url('./images/gron_pattern.png');
+}
+
+.promotion-content p {
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+	font-weight: 500;
+	margin: 0 0 15px;
+}
+
+.promotion-content span:first-child {
+	display: inline-block;
+	background-color: #fff;
+	padding: 4px 8px;
+	font-size: 0.9rem;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.promotion-content .state {
+	display: inline-block;
+	font-size: 1.2rem;
+	font-weight: 300;
+	font-style: italic;
+}
+
+footer {
+	padding: 2% 5%;
+	background-color: #32037A;
+	color: #fff;
+	text-align: center;
+}
+footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+@media all and (min-width: 500px) {
+	.promotion-item {
+		width: 47.5%;
+	}
 }
 
 @media all and (min-width: 770px) {
 	.heading {
-		font-size: 4.7rem;
+		font-size: 1.9rem;
 	}
 	.sub-heading {
-		font-size: 1.9rem;
+		font-size: 4.7rem;
 	}
 	.sub-sub-heading {
 		margin: 40px auto;
@@ -272,10 +336,22 @@ a {
 	.container {
 		 margin: 0 45px;
 	 }
+
+	.promotion-item {
+		width: 32%;
+		margin-bottom: 20px;
+	}
+
+
 }
 
 @media all and (min-width: 940px) {
 	.puff {
 		font-size: 1.8rem;
+	}
+
+	.promotion-content p {
+		font-size: 1.8rem;
+		line-height: 2.6rem;
 	}
 }
