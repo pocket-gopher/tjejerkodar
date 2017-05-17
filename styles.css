@@ -26,7 +26,7 @@ a {
 }
 .sub-sub-heading {
 	color: #32037A;
-	margin: 30px auto;
+	margin: 60px auto 30px;
 	font-size: 1.5rem;
 	text-align: center;
 	font-weight: 700;
@@ -149,7 +149,7 @@ a {
 	position: relative;
 	width: 100%;
 }
-.container > div:before {
+.container > .teaser:before {
 	content: '';
 	display: block;
 	padding-top: 64.15%; /* 340/530 */
@@ -239,6 +239,57 @@ a {
 	font-style: italic;
 }
 
+.partner {
+	text-align: center;
+	font-size: 0.8rem;
+}
+.partner h4 {
+	font-size: 0;
+	padding: 31px 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200px 90px;
+}
+.partner a {
+	font-weight: 700;
+}
+.minor:not(:last-child):after {
+	content: '';
+	display: block;
+	height: 1px;
+	width: 80%;
+	margin: 5% auto;
+	background-color: #d6d6d6;
+}
+
+.iZettle {
+	background-image: url('./images/logos/iZettle_logo.png');
+}
+.paradox {
+	background-image: url('./images/logos/paradox_logo.png');
+}
+.academy {
+	background-image: url('./images/logos/academy_logo.png');
+}
+.synch {
+	background-image: url('./images/logos/synch_logo.png');
+}
+.avanza {
+	background-image: url('./images/logos/avanza_logo.png');
+}
+.svenska-spel {
+	background-image: url('./images/logos/svenska_logo.png');
+}
+.nordnet {
+	background-image: url('./images/logos/nordnet_logo.png');
+}
+.github {
+	background-image: url('./images/logos/github_logo.png');
+}
+.spot-on {
+	background-image: url('./images/logos/spoton_logo.png');
+}
+
 footer {
 	padding: 2% 5%;
 	background-color: #32037A;
@@ -254,6 +305,12 @@ footer a {
 	.promotion-item {
 		width: 47.5%;
 	}
+	.container .minor {
+		width: 47.5%;
+	}
+	.container .minor:after {
+		display: none;
+	}
 }
 
 @media all and (min-width: 770px) {
@@ -264,7 +321,7 @@ footer a {
 		font-size: 4.7rem;
 	}
 	.sub-sub-heading {
-		margin: 40px auto;
+		margin: 80px auto 40px;
 		font-size: 1.8rem;
 	}
 
@@ -330,19 +387,22 @@ footer a {
 	    margin-right: auto;
 	    max-width: 700px;
     }
+
+	.container {
+		margin: 0 45px;
+	}
 	.container > div {
+		width: 47.5%;
+	}
+	.container .teaser {
 		width: 50%;
 	}
-	.container {
-		 margin: 0 45px;
-	 }
 
-	.promotion-item {
+	.promotion-item,
+	.container .minor  {
 		width: 32%;
 		margin-bottom: 20px;
 	}
-
-
 }
 
 @media all and (min-width: 940px) {
@@ -353,5 +413,13 @@ footer a {
 	.promotion-content p {
 		font-size: 1.8rem;
 		line-height: 2.6rem;
+	}
+}
+
+@media all and (min-width: 940px) {
+	.container {
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 0 5%;
 	}
 }
