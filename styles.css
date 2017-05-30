@@ -9,6 +9,11 @@ body {
 a {
 	color: #32037A;
 }
+.highlight {
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-decoration: underline;
+}
 
 .heading {
 	margin: 10px auto;
@@ -51,6 +56,7 @@ a {
 	top: 20px;
 	height: 44px;
 	width: 44px;
+	z-index: 201;
 }
 .open-menu span {
 	position: relative;
@@ -90,14 +96,30 @@ a {
 }
 
 .menu {
-	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #32037A;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 30px 0 0;
+	-webkit-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+	z-index: 200;
+	transition: transform .3s;
+}
+
+.menu.is-open {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
 }
 
 .menu li {
 	text-transform: uppercase;
+	padding: 10px 60px 10px 30px;
+	box-sizing: border-box;
 }
 
 .menu li a {
@@ -123,7 +145,7 @@ a {
 }
 
 .hero {
-	padding: 40px;
+	padding: 60px 40px 40px;
 	background-image: url('./images/lila_pattern.png');
 	background-position: center;
 	background-size: cover;
@@ -291,14 +313,20 @@ a {
 }
 
 footer {
-	padding: 2% 5%;
+	padding: 2% 5% 5%;
 	background-color: #32037A;
 	color: #fff;
 	text-align: center;
 }
+footer .logo {
+	display: block;
+	margin: 30px auto;
+}
 footer a {
+	display: block;
 	color: #fff;
 	text-decoration: none;
+	margin: 18px 0;
 }
 
 @media all and (min-width: 500px) {
@@ -314,6 +342,10 @@ footer a {
 }
 
 @media all and (min-width: 770px) {
+	.highlight {
+		font-size: 1.8rem;
+	}
+
 	.heading {
 		font-size: 1.9rem;
 	}
@@ -334,16 +366,22 @@ footer a {
 	}
 
 	.menu {
-		display: block;
+		position: static;
 		margin: 28px auto 0;
 		padding: 0 0 0 27px;
 		letter-spacing: -4px;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		background-color: transparent;
+		transition: none;
 	}
 
 	.menu li {
 		display: inline-block;
 		letter-spacing: normal;
 		line-height: 1.7em;
+		padding: 0;
 	}
 
 	.menu li a {
@@ -364,7 +402,6 @@ footer a {
 
 	.main-title {
 		top: 20px;
-		left: -14px;
 		right: 0;
 		margin-left: auto;
 		margin-right: auto;
